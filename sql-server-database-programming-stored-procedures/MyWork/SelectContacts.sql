@@ -5,9 +5,17 @@ DROP PROCEDURE IF EXISTS [dbo].[SelectContacts]
 GO
 
 CREATE PROCEDURE [dbo].[SelectContacts]
+(
+@ContactId INT
+)
 AS 
 BEGIN;
-SELECT *FROM dbo.Contacts WHERE FirstName='Grace';
+
+SET NOCOUNT ON;
+
+SELECT *FROM dbo.Contacts WHERE ContactId= @ContactId
+
+SET NOCOUNT OFF;
 END;
 GO
 

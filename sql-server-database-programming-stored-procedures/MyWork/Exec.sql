@@ -2,10 +2,14 @@ USE Contacts;
 GO
 DECLARE @ContactIdOut INT;
 
-EXEC dbo.InsertContactsModifiedOutput 
-@FirstName='VER2',
-@LastName='VER21',
-@AllowContactByPhone=0
-@ContactId=@ContactIdOut;
+EXEC dbo.InsertContactsModifiedOutput1 
+@FirstName='BL1',
+@LastName='BL12',
+@DateOfBirth='1992-01-10',
+@AllowContactByPhone=0,
+@ContactId=@ContactIdOut OUTPUT;
 
-select *from Contacts where ContactId=@ContactId order by ContactId desc;
+--select *from Contacts where ContactId=@ContactIdOut order by ContactId desc;
+
+
+SELECT *FROM  Contacts 
